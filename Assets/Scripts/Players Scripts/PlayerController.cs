@@ -23,12 +23,21 @@ public class PlayerController : MonoBehaviour
 
         if (charController.isGrounded)
         {
-
+            verticalVelocity = 0;
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            {
+                verticalVelocity = jumpForce;
+            }
+        }
+        else
+        {
+            gravity = 30;
+            verticalVelocity -= gravity * Time.deltaTime; 
         }
 
         move.Normalize();
         move *= speed;
-      
+        move.y = verticalVelocity;
         charController.Move(move * Time.deltaTime);
     }
 }
