@@ -40,4 +40,21 @@ public class PlayerController : MonoBehaviour
         move.y = verticalVelocity;
         charController.Move(move * Time.deltaTime);
     }
+
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (!charController.isGrounded)
+        {
+            if (hit.collider.tag == "Wall")
+            {       
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+                {
+                    verticalVelocity = jumpForce;
+
+                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
+                }
+            }
+        }
+    }
 }
