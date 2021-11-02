@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour
 
     private bool doubleJump;
     private CharacterController charController;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Awake()
     {
-        charController = GetComponent<CharacterController>(); 
+        charController = GetComponent<CharacterController>();
+        anim = transform.GetChild(0).GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,26 +32,38 @@ public class PlayerController : MonoBehaviour
             verticalVelocity = 0;
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
-                verticalVelocity = jumpForce;
+                Jump();
                 doubleJump = true;
+              
             }
         }
         if(!wallSlide)
         {
             gravity = 30;
             verticalVelocity -= gravity * Time.deltaTime;
+          
         }
         else
         {
             gravity = 15;
             verticalVelocity -= gravity * .5f* Time.deltaTime;
+          
         }
+
+        anim.SetBool("WallSlide", wallSlide);
+        anim.SetBool("Grounded", charController.isGrounded);
 
         move.Normalize();
         move *= speed;
         move.y = verticalVelocity;
         charController.Move(move * Time.deltaTime);
 
+    }
+
+    void Jump()
+    {
+        verticalVelocity = jumpForce;
+        anim.SetTrigger("Jump");
     }
 
 
@@ -63,7 +77,7 @@ public class PlayerController : MonoBehaviour
                     wallSlide = true;
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 {
-                    verticalVelocity = jumpForce;
+                    Jump();
 
                     doubleJump = false;
 
