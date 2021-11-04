@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Ground
+  - Slide
   layers:
   - Default
   - TransparentFX
