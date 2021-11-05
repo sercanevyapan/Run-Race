@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!charController.isGrounded)
         {
-            if (hit.collider.tag == "Wall")
+            if (hit.collider.tag == "Wall" || hit.collider.tag =="Slide")
             {
                 if (verticalVelocity < -.6f)
                     wallSlide = true;

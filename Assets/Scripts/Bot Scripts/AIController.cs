@@ -85,7 +85,7 @@ public class AIController : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.collider.tag=="Wall" || hit.collider.tag=="Slide")
+        if (hit.collider.tag=="Wall" )
         {
             if (jump)
                 StartCoroutine(LateJump(UnityEngine.Random.Range(0.2f,.5f)));
