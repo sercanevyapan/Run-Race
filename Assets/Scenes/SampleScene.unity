@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 405036860}
   - component: {fileID: 405036859}
   - component: {fileID: 405036858}
+  - component: {fileID: 405036861}
   m_Layer: 0
   m_Name: Bot2
   m_TagString: Untagged
@@ -233,6 +234,23 @@ Transform:
   m_Father: {fileID: 312640967}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &405036861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405036857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140b60e80080a4d49af6c371914a0dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCheckPoint: 0
+  lapCount: 0
+  distance: 0
+  counter: 0
+  rank: 0
 --- !u!4 &427688273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 42b9d58a30999a74c877a6fe8f690244, type: 3}
@@ -897,6 +915,7 @@ GameObject:
   - component: {fileID: 698804660}
   - component: {fileID: 698804662}
   - component: {fileID: 698804661}
+  - component: {fileID: 698804663}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -953,6 +972,23 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.79, z: 0}
+--- !u!114 &698804663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698804659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140b60e80080a4d49af6c371914a0dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCheckPoint: 0
+  lapCount: 0
+  distance: 0
+  counter: 0
+  rank: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1156,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100002, guid: d4aa06036ea219241ba586629656af62, type: 3}
       propertyPath: m_Name
+      value: Finish
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: d4aa06036ea219241ba586629656af62, type: 3}
+      propertyPath: m_TagString
       value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: d4aa06036ea219241ba586629656af62, type: 3}
@@ -2939,6 +2979,7 @@ GameObject:
   - component: {fileID: 1490588721}
   - component: {fileID: 1490588720}
   - component: {fileID: 1490588719}
+  - component: {fileID: 1490588722}
   m_Layer: 0
   m_Name: Bot1
   m_TagString: Untagged
@@ -2995,6 +3036,23 @@ Transform:
   m_Father: {fileID: 312640967}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1490588722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490588718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140b60e80080a4d49af6c371914a0dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCheckPoint: 0
+  lapCount: 0
+  distance: 0
+  counter: 0
+  rank: 0
 --- !u!1 &1507831814
 GameObject:
   m_ObjectHideFlags: 0
