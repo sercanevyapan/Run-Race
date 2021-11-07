@@ -41,7 +41,7 @@ public class RankingSystem : MonoBehaviour
         if (target.tag == "Finish")
         {
             lapCount += 1;
-            GameManager.intance.pass += 1; 
+            GameManager.instance.pass += 1; 
         }
     }
 }

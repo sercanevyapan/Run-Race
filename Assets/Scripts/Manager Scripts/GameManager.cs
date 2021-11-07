@@ -6,20 +6,21 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager intance;
+    public static GameManager instance;
 
     private GameObject[] runners;
 
     List<RankingSystem> sortArray = new List<RankingSystem>();
 
     public int pass;
+    public bool finish;
 
     public string firstPlace, secondPlace, thirdPlace;
    
 
     private void Awake()
     {
-        intance = this;
+        instance = this;
         runners = GameObject.FindGameObjectsWithTag("Runner");
     }
 
@@ -97,6 +98,11 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < runners.Length; i++)
             {
                 sortArray.Add(runners[i].GetComponent<RankingSystem>());
+            }
+
+            if (runners.Length<2)
+            {
+                finish = true;
             }
 
         }

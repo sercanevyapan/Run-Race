@@ -21,6 +21,16 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.finish)
+        {
+           
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Dance"))
+            {
+                anim.SetTrigger("Dance");
+                transform.eulerAngles = Vector3.up * 180;
+            }
+            return;
+        }
         move = Vector3.zero;
         move = transform.forward;
 
