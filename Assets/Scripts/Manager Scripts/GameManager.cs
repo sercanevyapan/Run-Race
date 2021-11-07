@@ -7,6 +7,7 @@ using System.Linq;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    private InGame ig;
 
     private GameObject[] runners;
 
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         runners = GameObject.FindGameObjectsWithTag("Runner");
+        ig = FindObjectOfType<InGame>();
     }
 
     void Start()
@@ -47,18 +49,28 @@ public class GameManager : MonoBehaviour
         switch (sortArray.Count)
         {
             case 3:
-            sortArray[0].rank = 3;
-            sortArray[1].rank = 2;
-            sortArray[2].rank = 1;
+                sortArray[0].rank = 3;
+                sortArray[1].rank = 2;
+                sortArray[2].rank = 1;
+
+                ig.a = sortArray[2].name;
+                ig.b = sortArray[1].name;
+                ig.c = sortArray[0].name;
+
                 break;
 
             case 2:
                 sortArray[0].rank = 2;
                 sortArray[1].rank = 1;
+
+                ig.a = sortArray[1].name;
+                ig.b = sortArray[0].name;
+                ig.thirdPlaceImg.color = Color.red;
                 break;
 
             case 1:
                 sortArray[0].rank = 1;
+                ig.a = sortArray[0].name;
                 if (firstPlace == "")
                 {
                     firstPlace = sortArray[0].name;
