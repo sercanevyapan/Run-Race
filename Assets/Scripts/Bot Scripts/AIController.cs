@@ -98,7 +98,7 @@ public class AIController : MonoBehaviour
         if (hit.collider.tag=="Wall" )
         {
             if (jump)
-                StartCoroutine(LateJump(UnityEngine.Random.Range(0.2f,.5f)));
+                StartCoroutine(LateJump(UnityEngine.Random.Range(.1f,.12f)));
             if (verticalVelocity <0)
                 wallSlide = true;
         }

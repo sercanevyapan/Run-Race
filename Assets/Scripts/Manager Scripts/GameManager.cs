@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     List<RankingSystem> sortArray = new List<RankingSystem>();
 
     public int pass;
-    public bool finish;
+    public bool finish, failed;
 
     public string firstPlace, secondPlace, thirdPlace;
    
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
                 if (firstPlace == "")
                 {
                     firstPlace = sortArray[0].name;
-
+                    GameUI.instance.OpenLB();
                 }
                 
                 break;
@@ -90,7 +90,8 @@ public class GameManager : MonoBehaviour
                 {
                     if(rs.gameObject.name == "Player")
                     {
-
+                        GameUI.instance.OpenLB();
+                        failed = true;
                     }
 
                     if (thirdPlace == "")
