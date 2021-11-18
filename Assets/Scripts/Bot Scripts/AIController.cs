@@ -31,6 +31,10 @@ public class AIController : MonoBehaviour
             }
             return;
         }
+
+        if (!GameManager.instance.start)
+            return;
+
         move = Vector3.zero;
         move = transform.forward;
 
@@ -98,7 +102,7 @@ public class AIController : MonoBehaviour
         if (hit.collider.tag=="Wall" )
         {
             if (jump)
-                StartCoroutine(LateJump(UnityEngine.Random.Range(.1f,.12f)));
+                StartCoroutine(LateJump(UnityEngine.Random.Range(.1f,.20f)));
             if (verticalVelocity <0)
                 wallSlide = true;
         }

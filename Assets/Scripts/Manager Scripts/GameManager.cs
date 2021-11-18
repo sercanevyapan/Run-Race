@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     List<RankingSystem> sortArray = new List<RankingSystem>();
 
     public int pass;
-    public bool finish, failed;
+    public bool finish, failed, start;
 
     public string firstPlace, secondPlace, thirdPlace;
    

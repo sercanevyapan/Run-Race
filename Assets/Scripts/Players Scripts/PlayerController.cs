@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour
             }
             return;
         }
+
+        if (!GameManager.instance.start)
+            return;
+
         move = Vector3.zero;
         move = transform.forward;
 
