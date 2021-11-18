@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if(transform.forward !=hit.collider.transform.up && hit.collider.tag == "Ground" && !turn)
+            if((transform.forward !=hit.collider.transform.up && transform.forward != hit.transform.right) && hit.collider.tag == "Ground" && !turn)
             {
                 turn = true;
                 
