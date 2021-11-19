@@ -9,6 +9,7 @@ TagManager:
   - Slide
   - CheckPoint
   - Runner
+  - Trampoline
   layers:
   - Default
   - TransparentFX

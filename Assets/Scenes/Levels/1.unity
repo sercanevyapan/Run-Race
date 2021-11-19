@@ -1899,6 +1899,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1720331120980625344, guid: b07847d71cb44174da1729ce5aa73ee7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1720331121913479762, guid: b07847d71cb44174da1729ce5aa73ee7, type: 3}
       propertyPath: m_Name
       value: GameUI

@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 move;
     public float speed, jumpForce, gravity, verticalVelocity;
 
-    private bool wallSlide, turn;
+    private bool wallSlide, turn, superJump;
 
     private CharacterController charController;
     private Animator anim;
@@ -63,8 +63,19 @@ public class PlayerController : MonoBehaviour
                 turn = false;
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
             }
+          
         }
-        if(!wallSlide)
+
+        if (superJump)
+        {
+            superJump = false;
+            verticalVelocity = jumpForce * 1.75f;
+
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+                anim.SetTrigger("Jump");
+        }
+
+        if (!wallSlide)
         {
             gravity = 30;
             verticalVelocity -= gravity * Time.deltaTime;
@@ -73,7 +84,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             gravity = 15;
-            verticalVelocity -= gravity * .5f* Time.deltaTime;
+            verticalVelocity -= gravity /** .5f*/* Time.deltaTime;
           
         }
 
@@ -114,11 +125,13 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if((transform.forward !=hit.collider.transform.up && transform.forward != hit.transform.right) && hit.collider.tag == "Ground" && !turn)
-            {
+            if (hit.collider.tag == "Trampoline")
+                superJump = true;
+
+            if(transform.forward !=hit.collider.transform.up && transform.forward != hit.transform.right && hit.collider.tag == "Ground" && !turn)          
                 turn = true;
                 
-            }
+            
         }
     }
 
