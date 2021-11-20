@@ -2011,8 +2011,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inGame: {fileID: 1720331121841721730}
-  leaderboard: {fileID: 1720331120552907443}
+  leaderboard: {fileID: 1720331120980625344}
   countText: {fileID: 1720331120586391824}
+  currentLevelText: {fileID: 1720331120941179363}
+  nextLevelText: {fileID: 1720331120162851269}
+  fill: {fileID: 1720331121007870744}
+  orange: {fileID: 21300000, guid: 288773705654be74598851514d1638fb, type: 3}
+  gray: {fileID: 21300000, guid: aa86946e1c51bca4bb5204b5bc289631, type: 3}
 --- !u!1 &1720331121985505225
 GameObject:
   m_ObjectHideFlags: 0

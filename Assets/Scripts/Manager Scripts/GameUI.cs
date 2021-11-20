@@ -12,6 +12,10 @@ public class GameUI : MonoBehaviour
     private Button nextLevel;
     public Text countText;
 
+    public Text currentLevelText, nextLevelText;
+    public Image fill;
+
+    public Sprite orange, gray;
 
     void Awake()
     {
@@ -53,7 +57,19 @@ public class GameUI : MonoBehaviour
     {
         inGame.SetActive(false);
         leaderboard.SetActive(true);
-
+        if (GameManager.instance.failed)
+        {
+            currentLevelText.text = PlayerPrefs.GetInt("Level", 1).ToString();
+            nextLevelText.text = PlayerPrefs.GetInt("Level", 1) + 1 + "";
+            fill.sprite = gray;
+        }
+        else
+        {
+            currentLevelText.text = PlayerPrefs.GetInt("Level", 1) - 1 + "";
+            nextLevelText.text = PlayerPrefs.GetInt("Level", 1).ToString();
+            fill.sprite = orange;
+        }
+        
     }
 
     private void Restart()
