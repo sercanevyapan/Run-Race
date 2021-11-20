@@ -16,6 +16,7 @@ public class AIController : MonoBehaviour
     {
         charController = GetComponent<CharacterController>();
         anim = transform.GetChild(0).GetComponent<Animator>();
+        gameObject.name = Names.BotNames[UnityEngine.Random.Range(0, Names.BotNames.Length)];
     }
 
     // Update is called once per frame

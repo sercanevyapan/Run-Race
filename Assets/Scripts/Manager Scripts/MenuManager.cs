@@ -13,6 +13,17 @@ public class MenuManager : MonoBehaviour
     {
         currentLevelText.text = PlayerPrefs.GetInt("Level", 1).ToString();
         nextLevelText.text = PlayerPrefs.GetInt("Level",1) + 1 + "";
+
+        //if (PlayerPrefs.GetString("PlayerName") != "Player")
+        if (PlayerPrefs.GetInt("FirstTime", 0) == 0)
+        {
+            PlayerPrefs.SetInt("FirstTime", 1);
+        }
+        else
+        {
+            playerName.text = PlayerPrefs.GetString("PlayerName");
+        }
+            
     }
 
   
