@@ -1,5 +1,5 @@
 # Run Race
  
- ## Game Play Video
+ ## GamePlay Video
  
- [Game Play Video](https://youtu.be/3qjl9SNzoK0)
+ [GamePlay Video](https://youtu.be/3qjl9SNzoK0)
